@@ -8,24 +8,25 @@ Ex:
 |         Min: -3                    |
 |____________________________________|
 */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
-	argc--;
-	int testcase[argc],i;
-	for(i=0; i<argc;i++){
-		if(atoi(argv[i+1])==0){
-			argc = i;
-			break;
-		}
-		else
-			testcase[i] = atoi(argv[i+1]);
+#include<stdio.h>
+int main()
+{
+	int i, Max, Min;
+	printf(" Input: ");
+	scanf_s("%d", &i);
+	Max = i;
+	Min = i;
+	while (i!=0)
+	{
+		if (Max < i)
+			Max = i;
+		if (Min > i)
+			Min = i;
+		scanf_s("%d", &i);
 	}
-	//Your codes here
-
+	printf("Max: %d\i", Max);
+	printf("Min: %d\i", Min);
+	float ave = (Max + Min)*1.0 / 2;
+	printf("ave %f", ave);
 	return 0;
 }
